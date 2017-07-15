@@ -2,14 +2,17 @@ var express = require('express');
 var router = express.Router();
 var mysql = require('./db');
 
+/* Normal CRUD operations for the voting_app */
 
-/* GET home page. */
+// GET home page.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+
+// This API returns a list of fruits.
 router.get('/v1/getlist', function(req,res,next){
-  var query = "SELECT * FROM fruits;"
+  var query = "SELECT ID, Name, total_votes FROM fruits;"
   mysql.fetchData(function (err, results) {
     if(err) throw err;
     else{
@@ -18,6 +21,7 @@ router.get('/v1/getlist', function(req,res,next){
   }, query);
 });
 
+// User authentication
 router.post('/v1/login', function(req,res){
     var userDetails = "SELECT ID FROM Users WHERE username='"+req.body.name+"';";
     mysql.fetchData(function(err, userID){
@@ -30,6 +34,7 @@ router.post('/v1/login', function(req,res){
     }, userDetails);
 });
 
+// Fetch fruits which the user had voted previously.
 router.post('/v1/fetchvotes', function(req, res){
   var userVotes = {}
   var voteDetails = "SELECT Name FROM fruits t1 INNER JOIN votes t2 ON t1.id=t2.fruit_id WHERE t2.user_id="+req.body.userID+";";
@@ -45,6 +50,7 @@ router.post('/v1/fetchvotes', function(req, res){
 })
 
 
+// Updating database when a user votes for a fruit.
 router.post('/v1/vote', function(req, res){
   var q = "INSERT INTO votes VALUES ("+req.body.fruitID+", "+req.body.userID+");"
   mysql.fetchData(function (err, results) {

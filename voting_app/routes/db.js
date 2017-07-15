@@ -1,7 +1,8 @@
 var mysql = require('mysql');
 
+// Local DB config
 var connection = mysql.createConnection({
-  connectionLimit : 100, //important
+  connectionLimit : 100,
   host : 'localhost',
 	user : 'root',
 	password : '1234',
@@ -11,6 +12,8 @@ var connection = mysql.createConnection({
 
 connection.connect();
 
+// Generic function which will be invoked multiple time
+// Will fetch the results of whatever query passed to it.
 function fetchData(callback, sqlQuery){
 		connection.query(sqlQuery, function(err, rows, fields){
 			if(err){

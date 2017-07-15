@@ -1,3 +1,5 @@
+/* Middleware Config */
+
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -17,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+// Defined REST API endpoints
 app.use('/', index);
 app.use('/v1/getlist', index)
 app.use('/v1/login', index)

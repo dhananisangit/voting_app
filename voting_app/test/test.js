@@ -2,6 +2,7 @@ var assert = require('assert');
 var http = require('http');
 var request = require('request')
 
+// Use 'describe' to group together similar tests
 
 describe('Page load', function(){
 

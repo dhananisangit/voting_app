@@ -3,6 +3,8 @@
 /**
  * The main controller for the app. The controller:
  * - exposes the model to the template and provides event handlers
+ * Presentational logic only inside a controller.
+ * Business logic should be delegated to a service.
  */
 angular.module('voting_app')
 	.controller('votingCtrl', function votingCtrl($scope, apiService) {
