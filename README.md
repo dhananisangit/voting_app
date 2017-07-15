@@ -165,3 +165,7 @@ To run Node tests:
 ```./node_modules/mocha/bin/mocha ```
 
 This will run all the test files in the project.
+
+# Demo
+
+![Demo](https://s11.postimg.org/9nzhcl5b7/voting_app_demo.gif)
