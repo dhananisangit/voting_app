@@ -1,6 +1,10 @@
 # Voting App
 This repo contains a web application that uses the Express framework.
 
+# Demo
+
+![Demo](https://s11.postimg.org/9nzhcl5b7/voting_app_demo.gif)
+
 ## Setup
 
 #### Node
@@ -166,6 +170,4 @@ To run Node tests:
 
 This will run all the test files in the project.
 
-# Demo
 
-![Demo](https://s11.postimg.org/9nzhcl5b7/voting_app_demo.gif)
