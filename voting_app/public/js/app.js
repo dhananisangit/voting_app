@@ -1,5 +1,3 @@
-/*global angular */
-
 /**
  * The main app module
  *
@@ -12,12 +10,8 @@ angular.module('voting_app', ['ngRoute'])
 		$routeProvider
 			.when('/', {
 				controller: 'votingCtrl',
-				templateUrl: 'voting-index.html',
+				templateUrl: 'voting-index.html'
 			})
-			// .when('/:userID',{
-			// 	controller:'votingCtrl',
-			// 	templateUrl: 'voting-table.html',
-			// })
 			.otherwise({
 				redirectTo: '/'
 			});
