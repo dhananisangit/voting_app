@@ -1,7 +1,7 @@
 {
   "name": "voting-app",
   "version": "1.0.0",
-  "private": true,
+  "description": "A fruit voting app",
   "scripts": {
     "start": "node ./bin/www"
   },
