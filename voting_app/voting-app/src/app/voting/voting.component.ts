@@ -21,7 +21,6 @@ export class VotingComponent {
 
   ngOnInit(){
     this.results = []
-    console.log()
     var data = {
       'userID':this.user.id
     }

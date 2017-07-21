@@ -48,7 +48,4 @@ export class LoginComponent {
   return Promise.reject(error.message || error);
 }
 
-  OnUpdateUsername(event: Event){
-    this.username = (<HTMLInputElement>event.target).value;
-  }
 }

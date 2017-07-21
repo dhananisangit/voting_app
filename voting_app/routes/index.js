@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 // This API returns a list of fruits.
 router.get('/v1/getlist', function(req,res,next){
-  var query = "SELECT ID, Name, total_votes FROM fruits;"
+  var query = "SELECT ID, Name, total_votes FROM fruits ORDER BY total_votes DESC;"
   mysql.fetchData(function (err, results) {
     if(err) throw err;
     else{

@@ -3,7 +3,7 @@
   <div class="col-md-4"></div>
   <div class="col-md-4" style="text-align:center" *ngIf="login">
       <br/><h1 id="dob" class="age-label">Voting app</h1><br/>
-      <input type="text" class="form-control" [(ngModel)]="username" placeholder="Username"><br/>
+      <input type="text" class="form-control" [(ngModel)]="username" placeholder="Username"/><br/>
       <button type="button" class="btn btn-primary" (click)="onLogin()" [disabled]="AllowLogin">Enter</button>
 
   </div>
