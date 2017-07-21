@@ -5,11 +5,8 @@ import { HttpModule} from '@angular/http';
 // import {OrderByPipe} from 'fuel-ui/fuel-ui';
 
 //My components
-import { LoginComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
 import { VotingComponent } from './voting/voting.component';
-// import { OrderByPipe } from './voting/voting.filter';
-
-
 
 @NgModule({
   declarations: [

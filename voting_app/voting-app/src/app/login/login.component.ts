@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { User } from './user';
+import { User } from '../user';
 import 'rxjs/add/operator/map';
 import 'rxjs/Rx';
 import 'rxjs/add/operator/toPromise';
@@ -9,11 +9,9 @@ import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'login-app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './login.component.html'
 
 })
-
 
 export class LoginComponent {
   username;
@@ -38,8 +36,6 @@ export class LoginComponent {
     })
     .toPromise()
     .catch(this.handleError);
-
-
 
   }
 
