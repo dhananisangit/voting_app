@@ -5,9 +5,9 @@ var mysql = require('./db');
 /* Normal CRUD operations for the voting_app */
 
 // GET home page.
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Express' });
+// });
 
 
 // This API returns a list of fruits.
