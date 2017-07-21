@@ -15,7 +15,9 @@
     "express": "^4.15.3",
     "mocha": "^3.4.2",
     "mysql": "^2.13.0",
+    "orm": "^3.2.4",
     "request": "^2.81.0",
+    "sequelize": "^4.4.0",
     "serve-favicon": "^2.4.3"
   },
   "devDependencies": {

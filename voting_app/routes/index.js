@@ -23,7 +23,8 @@ router.get('/v1/getlist', function(req,res,next){
 
 // User authentication
 router.post('/v1/login', function(req,res){
-    var userDetails = "SELECT ID FROM Users WHERE username='"+req.body.name+"';";
+    var cleanedParam = mysql.connection.escape(req.body.name);
+    var userDetails = "SELECT ID FROM Users WHERE username="+cleanedParam+";";
     mysql.fetchData(function(err, userID){
       if(userID.length>0) {
         res.send({"status":"200", 'userID':userID[0].ID})
@@ -37,7 +38,8 @@ router.post('/v1/login', function(req,res){
 // Fetch fruits which the user had voted previously.
 router.post('/v1/fetchvotes', function(req, res){
   var userVotes = {}
-  var voteDetails = "SELECT Name FROM fruits t1 INNER JOIN votes t2 ON t1.id=t2.fruit_id WHERE t2.user_id="+req.body.userID+";";
+  var cleanedParam = mysql.connection.escape(req.body.userID);
+  var voteDetails = "SELECT Name FROM fruits t1 INNER JOIN votes t2 ON t1.id=t2.fruit_id WHERE t2.user_id="+cleanedParam+";";
   mysql.fetchData(function(err, results){
     if(err) throw err;
     else{
@@ -52,7 +54,9 @@ router.post('/v1/fetchvotes', function(req, res){
 
 // Updating database when a user votes for a fruit.
 router.post('/v1/vote', function(req, res){
-  var q = "INSERT INTO votes VALUES ("+req.body.fruitID+", "+req.body.userID+");"
+  var cleanedParam1 = mysql.connection.escape(req.body.fruitID);
+  var cleanedParam2 = mysql.connection.escape(req.body.userID);
+  var q = "INSERT INTO votes VALUES ("+cleanedParam1+", "+cleanedParam2+");"
   mysql.fetchData(function (err, results) {
     if(err) throw err;
     else{

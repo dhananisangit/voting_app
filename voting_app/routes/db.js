@@ -27,3 +27,4 @@ function fetchData(callback, sqlQuery){
 
 
 exports.fetchData = fetchData;
+exports.connection = connection
