@@ -1,0 +1,25 @@
+
+
+<div class="col-md-4" >
+      <div class="container-fluid" align="center">
+				<h2>Fruit Voting App</h2>
+				<h3>Welcome {{user.name}}, vote for your favorite fruit snack</h3><br/>
+          <table class="table">
+              <thead>
+                  <tr>
+											<th></th>
+                      <th>Fruit</th>
+											<th>Total Votes</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let fruit of results">
+											<td><button type="button" class="btn btn-primary" [disabled]="fruit.voted" (click)="voteFruit(fruit.fruitID, fruit.userID)">Vote</button></td>
+                      <td>{{fruit.name}}</td>
+											<td>{{fruit.totalVotes}}</td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+	<div class="col-md-4"></div>
