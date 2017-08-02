@@ -1,5 +1,5 @@
 # Voting App
-This repo contains a web application that uses the Express framework.
+This repo contains a web application that uses MySql for models, express(nodejs) as middleware for creating REST APIs and Angular v4 for front end rendering.
 
 # Demo
 
@@ -139,20 +139,7 @@ To create a model and return them all after one is created.
 We use [AngularJS](https://angularjs.org/) to receive all of the data sent from Node in the backend to give us a truly dynamic webpage it also offers us many directives to display this data on the frontend. 
 
 ### Define an Angular Controller
-Angular follows the MVC pattern on the frontend. We won't have to really do anything to the model once it gets to Angular so, next up is the Controller. We define Angular controllers and export them as angular modules. 
-
-[Angular Services](https://docs.angularjs.org/api/ng/service)
-
-To add more functionality to our controller, we can throw in more angular services as arguments after ```$scope```
-
-I recommend adding the ```$http``` service to make frontend wrappers for our API calls.
-```javascript
-var appController = angular.module('appController', []);
-
-function appCtrl($scope, $http) {
-    ...
-}
-```
+Angular follows the MVC pattern on the frontend. We won't have to really do anything to the model once it gets to Angular so, next up is the components. We define Angular components and export them for code resuablity. 
 
 
 ## Testing Your Application
